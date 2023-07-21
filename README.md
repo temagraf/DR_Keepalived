@@ -26,8 +26,8 @@
 ##### keepalived запускает скрипт с определенным интервалом, если скрипт возвращает статус 0, то ничего не происходит, если 1, то keepalived переходит в статус fault.
 #### Получившийся bash-скрипт
 [script](https://github.com/Svalker1989/Disaster_recovery/blob/main/nginx_recovery.sh)
-##### Rонфигурационный файл keepalived
-[config](https://github.com/Svalker1989/Disaster_recovery/blob/main/keepalived.conf)
+##### Конфигурационный файл keepalived с настройкой tracking script
+[config_script](https://github.com/Svalker1989/Disaster_recovery/blob/main/keepalived.conf)
 ##### Результат переезда плавающего ip на другой сервер в случае недоступности порта или файла index.html
 [Z2](https://github.com/Svalker1989/Disaster_recovery/blob/main/Z2.PNG)
 ---
@@ -44,5 +44,7 @@
 ##### keepalived смотрит значение в отслеживаемом файле. Базовый вес приоритета 244, итоговый результат определяется как умножение значения в файле для отслеживания на вес, указанный в keepalive.conf и + базовый вес.
 #### Получившийся bash-скрипт для отслеживания нагрузки на ЦПУ. Начинает отслеживать если нагрузка > 50%. В зависимости от нагрузки записывает в отслеживаемый файл числно, на которое уменьшится приоритет. По логике чем больше нагрузка, тем меньше приоритет.
 [script](https://github.com/Svalker1989/Disaster_recovery/blob/main/track_script.sh)
+##### Конфигурационный файл keepalived с настройкой tracking file
+[config_file](https://github.com/Svalker1989/Disaster_recovery/blob/main/keepalived_track_file.conf)
 #### Скриншот, на котором видно как меняется приоритет хоста в зависимости от значения в отслеживаемом файле
 ![Z3](https://github.com/Svalker1989/Disaster_recovery/blob/main/Z3.PNG)
