@@ -48,3 +48,9 @@
 [config_file](https://github.com/Svalker1989/Disaster_recovery/blob/main/keepalived_track_file.conf)
 #### Скриншот, на котором видно как меняется приоритет хоста в зависимости от значения в отслеживаемом файле
 ![Z3](https://github.com/Svalker1989/Disaster_recovery/blob/main/Z3.PNG)
+
+### P.S.
+#### Для создания нагрузки на ЦПУ использовал 
+```
+for i in 1 2 3 4; do while : ; do : ; done & done
+```
